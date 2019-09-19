@@ -61,16 +61,20 @@ _animationController.forward();
       appBar: AppBar(  
         title: Text("Animations -2"),
       ),
-      body: AnimatedBuilder(
-        animation: _animationController,
-        builder: (context,child) => Transform(
+      body: Container(
+        color: Colors.black,
+        child: AnimatedBuilder(
+          animation: _animationController,
+          builder: (context,child) => Transform(
 
-          transform: Matrix4.translationValues(_animation.value * width, 0.0, 0.0),
-                  child: Center(
-            child: Container( 
-              height: 200,
-              width: 200,
-              color: Colors.green,
+            transform: Matrix4.translationValues(_animation.value * width, 0.0, 0.0),
+                    child: Center(
+              child: Container( 
+                height: 200,
+                width: 200,
+             
+                child: FlutterLogo(),
+              ),
             ),
           ),
         ),
